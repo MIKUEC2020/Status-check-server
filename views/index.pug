@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  if eventRedisStatus.connected
+    h3 ✅ [Event message] Connected to Redis at #{eventRedisStatus.host}: #{eventRedisStatus.port}
+  else
+    h3 ❌ [Event message] Not connected to Redis at #{eventRedisStatus.host}: #{eventRedisStatus.port}
+  if apiRedisStatus.connected
+    h3 ✅ [Api cache] Connected to Redis at #{apiRedisStatus.host}: #{apiRedisStatus.port}
+  else
+    h3 ❌ [Api cache] Not connected to Redis at #{apiRedisStatus.host}: #{apiRedisStatus.port}
+  if sessionRedisStatus.connected
+    h3 ✅ [Session] Connected to Redis at #{sessionRedisStatus.host}: #{sessionRedisStatus.port}
+  else
+    h3 ❌ [Session] Not connected to Redis at #{sessionRedisStatus.host}: #{sessionRedisStatus.port}
